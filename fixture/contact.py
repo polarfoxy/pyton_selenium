@@ -30,7 +30,8 @@ class ContactHelper:
 
     def get_contact(self):
         wd = self.app.wd
-        wd.get("http://localhost/addressbook/")
+        if not wd.current_url.endswith("addressbook/"):
+            wd.get("http://localhost/addressbook/")
 
     def fill_contact_form(self, contact):
         wd = self.app.wd
