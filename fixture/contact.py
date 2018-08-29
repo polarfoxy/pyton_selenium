@@ -28,7 +28,7 @@ class ContactHelper:
     def mod_contact_by_index(self, contact, index):
         wd = self.app.wd
         self.get_contact()
-        wd.find_elements_by_css_selector("title = Edit")[index].click()
+        wd.find_elements_by_css_selector("[src='icons/pencil.png']")[index].click()
         self.fill_contact_form(contact)
         wd.find_element_by_name("update").click()
         self.contact_cache = None
